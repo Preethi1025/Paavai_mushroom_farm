@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  background-color: #4CAF50;
+  padding: 20px 50px;
+  color:black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section img {
+  height: 50px;
+  margin-right: 12px;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  color:black;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: green;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url('back.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+  z-index: 1;
+  padding: 30px 50px;
+  border-radius: 12px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  
+}
+
+.hero-text p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+.hero-text {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.button-container {
+  margin-top: 60px;
+}
+
+.hero-btn {
+  text-decoration: none;
+  padding: 12px 30px;
+  background-color: #4CAF50; /* Change to your brand color */
+  color: white;
+  font-size: 15px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.hero-btn:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+.card {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 60px 50px;
+  background: white;
+}
+
+.card {
+  background-color: rgba(76, 175, 80, 0.1);;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.6s ease;
+  text-align: center;
+}
+
+.card[data-aos] {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+/* Section Styling for Process */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  min-height: 100vh;
+ background-color: white;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left, .right {
+  flex: 1 1 500px;
+  padding: 20px;
+}
+
+.left img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.right h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.right p {
+  font-size:20px;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left, .right {
+    padding: 10px;
+  }
+
+  .right h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
+.custom-footer {
+  background-color: #f4f4f4; /* Light grey, you can change it to a soft color like #e8f5e9 for light green */
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 40px;
+  color: #333;
+}
+
+/* Google Translate Alignment Fix */
+.translate-container {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+/* Ensuring nav links and translate stay aligned in flex */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav, .translate-container {
+    margin-top: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .translate-container {
+    margin-left: 0;
+  }
+}

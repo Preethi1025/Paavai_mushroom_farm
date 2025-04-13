@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Product Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+  <style>
+   header {
+  background-color: #4CAF50;
+  padding: 20px 50px;
+  color:black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section img {
+  height: 50px;
+  margin-right: 12px;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  color:black;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: green;
+}
+    .product-img {
+      max-height: 300px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .product-img:hover {
+      transform: scale(1.03);
+    }
+
+    .rating {
+      font-size: 1.2rem;
+      color: #ffc107;
+    }
+
+    .logo-container img {
+      padding: 10px;
+      margin-top: 0px;
+      margin-left: 50px;
+    }
+
+    .hero-btn {
+      text-decoration: none;
+      padding: 12px 30px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 18px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .hero-btn:hover {
+      background-color: #388e3c;
+      transform: scale(1.05);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      color: #333;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: popupFadeIn 0.4s ease;
+      position: relative;
+    }
+
+    .popup-content a {
+      color: #4CAF50;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .popup-content a:hover {
+      text-decoration: underline;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+
+    @keyframes popupFadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+  <style>
+    html body .goog-te-banner-frame,
+    html body .goog-te-banner-frame.skiptranslate,
+    html body body {
+      top: 0 !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo-section">
+    <img src="logo.jpeg" alt="Logo">
+    <span class="brand-name">PAAVAI MUSHROOM FARM</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="about.html">About Us</a>
+  
+  </nav>
+  <div id="google_translate_element"></div>
+  </header>
+
+<!-- Product Section -->
+<div class="container my-5">
+
+  <!-- Product 1 -->
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-5">
+      <div class="card shadow-sm border-0 position-relative">
+        <img src="milky mushroom.webp" class="card-img-top img-fluid rounded product-img" alt="Milky mushroom">
+        <img src="logo.jpeg" class="position-absolute" style="top: 10px; left: 45px; width: 60px; height: auto; z-index: 2;" alt="Logo">
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 class="card-title">Milky Mushrooms</h2>
+          <p><strong>Price:</strong> ₹250.00</p>
+          <p><strong>Weight:</strong> 1Kg</p>
+          <p class="text-muted">Milky mushrooms (Calocybe indica) are a tropical variety known for their thick, white flesh and excellent shelf life. Rich in protein, fiber, and essential nutrients, they are highly valued for their nutritional benefits and robust texture, making them ideal for a variety of culinary uses</p>
+          <div class="rating mb-3">⭐️⭐️⭐️⭐️☆</div>
+          <p><em>Available for in-person sales only. Please visit us during store hours to purchase. or Make a simple call to place your orders</em></p>
+          <div class="button-container">
+            <a href="#" class="hero-btn">Buy Now</a>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn">&times;</span>
+              <p><strong>YOU CAN PLACE YOUR ORDER BY SIMPLY CALLING</strong><br>📞 <a href="tel:+91 9360262443">+91 9360262443</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-5 d-flex justify-content-end">
+      <div class="card shadow-sm border-0 position-relative">
+        <img src="oyster.jpg" class="card-img-top img-fluid rounded product-img" alt="Spicy Mango Pickle">
+        <img src="logo.jpeg" class="position-absolute" style="top: 10px; left: 10px; width: 60px; height: auto; z-index: 2;" alt="Logo">
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 class="card-title">Oyster Mushrooms</h2>
+          <p><strong>Price:</strong> ₹250.00</p>
+          <p><strong>Weight:</strong> 1kg</p>
+          <p class="text-muted">🌿 Oyster Mushrooms
+            Oyster mushrooms (Pleurotus ostreatus) are soft, flavorful, and packed with nutrients. Rich in protein, vitamins, and antioxidants, they support immunity and are great for healthy diets.
+            
+            Perfect for stir-fries, curries, soups, and more, they soak up flavors beautifully. At Paavai Mushroom Farm, we grow them fresh, chemical-free, and with care — straight from our farm to your kitchen!</p>
+          <div class="rating mb-3">⭐️⭐️⭐️⭐️⭐️</div>
+          
+         
+          <p><em>Available for in-person sales only. Please visit us during store hours to purchase. or Make a simple call to place your orders</em></p>
+          <div class="button-container">
+            <a href="#" class="hero-btn">Buy Now</a>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn">&times;</span>
+              <p><strong>YOU CAN PLACE YOUR ORDER BY SIMPLY CALLING</strong><br>📞 <a href="tel:+91 9360262443">+91 9360262443</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-5">
+      <div class="card shadow-sm border-0 position-relative">
+        <img src="mango-pickle.webp" class="card-img-top img-fluid rounded product-img" alt="Milky mushroom">
+        <img src="logo.jpeg" class="position-absolute" style="top: 10px; left: 45px; width: 60px; height: auto; z-index: 2;" alt="Logo">
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 class="card-title">Mushroom Pickle</h2>
+          <p><strong>Price:</strong> ₹80.00</p>
+          <p><strong>Weight:</strong> 100g</p>
+          <p class="text-muted">🍄 Mushroom Pickle
+            Spice up your meals with our homemade Mushroom Pickle! Made with tender mushrooms, traditional spices, and pure oil, this tangy and flavorful pickle is a perfect side for rice, rotis, and snacks.
+            
+            At Paavai Mushroom Farm, we prepare our pickles hygienically with no added preservatives — just authentic taste in every bite. A must-try for every pickle lover!</p>
+          <div class="rating mb-3">⭐️⭐️⭐️⭐️☆</div>
+          
+          <p><em>Available for in-person sales only. Please visit us during store hours to purchase. or Make a simple call to place your orders</em></p>
+          <div class="button-container">
+            <a href="#" class="hero-btn">Buy Now</a>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn">&times;</span>
+              <p><strong>YOU CAN PLACE YOUR ORDER BY SIMPLY CALLING</strong><br>📞 <a href="tel:+91 9360262443">+91 9360262443</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-5">
+      <div class="card shadow-sm border-0 position-relative">
+        <img src="Biscuits.png" class="card-img-top img-fluid rounded product-img" alt="Milky mushroom">
+        <img src="logo.jpeg" class="position-absolute" style="top: 10px; left: 45px; width: 60px; height: auto; z-index: 2;" alt="Logo">
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 class="card-title">Mushroom Biscuits</h2>
+          <p><strong>Price:</strong> ₹250.00</p>
+          <p><strong>Weight:</strong> 1Kg</p>
+          <p class="text-muted">🍪 Mushroom Biscuits
+            Crunchy, healthy, and delicious — our Mushroom Biscuits are the perfect snack for all ages! Made with real mushroom powder, whole grains, and a hint of spice, they’re packed with flavor and nutrients.
+            
+            At Paavai Mushroom Farm, we blend health and taste to create biscuits that are:
+            
+            Rich in fiber and protein
+            
+            Low in sugar and preservatives
+            
+            Ideal for tea-time or lunchbox snacks</p>
+          <div class="rating mb-3">⭐️⭐️⭐️⭐️☆</div>
+         
+          <p><em>Available for in-person sales only. Please visit us during store hours to purchase. or Make a simple call to place your orders</em></p>
+          <div class="button-container">
+            <a href="#" class="hero-btn">Buy Now</a>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn">&times;</span>
+              <p><strong>YOU CAN PLACE YOUR ORDER BY SIMPLY CALLING</strong><br>📞 <a href="tel:+91 9360262443">+91 9360262443</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer style="background-color: rgba(76, 175, 80, 0.6); color: black; font-weight: bold; padding-top: 20px; text-align: center;">
+
+  <div class="container">
+    <div class="row justify-content-center text-start text-md-center">
+      <div class="col-md-4 mb-3">
+        <h5>Contact Us</h5>
+        <p>
+          📍1007, North Street, O.koothur(po)<br>
+          Ariyalur District, 621705<br>
+          <strong>Phone:</strong> <a href="tel:+91 9360262443">+91 9360262443</a><br>
+          <strong>Email:</strong> <a href="mailto:arulkaruppu8@gmail.com">arulkaruppu8@gmail.com</a>
+        </p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>More Info</h5>
+        <ul class="list-unstyled">
+          <li><a href="about.html">About Us</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <hr class="bg-dark">
+    <div class="text-center small pb-2">
+      &copy; 2025 Paavai Mushroom Farms. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap & JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Popup Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buyBtns = document.querySelectorAll('.hero-btn'); // Select all "Buy Now" buttons
+    const popups = document.querySelectorAll('.popup'); // Select all popups
+    const closeBtns = document.querySelectorAll('.close-btn'); // Select all close buttons
+
+    // Loop through all "Buy Now" buttons and add an event listener for each one
+    buyBtns.forEach((btn, index) => {
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        popups[index].style.display = 'flex'; // Show the corresponding popup
+      });
+    });
+
+    // Loop through all close buttons and add an event listener for each one
+    closeBtns.forEach((btn, index) => {
+      btn.addEventListener('click', function () {
+        popups[index].style.display = 'none'; // Hide the corresponding popup
+      });
+    });
+
+    // Close the popup if clicked outside the popup content
+    popups.forEach((popup, index) => {
+      popup.addEventListener('click', function (e) {
+        if (e.target === popup) {
+          popups[index].style.display = 'none'; // Hide the corresponding popup
+        }
+      });
+    });
+  });
+
+</script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,ta',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+  window.onload = function () {
+    googleTranslateElementInit();
+  };
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
