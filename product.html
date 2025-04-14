@@ -4,8 +4,10 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Product Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
 
   <style>
    header {
@@ -35,17 +37,60 @@
   font-weight: bold;
 }
 
+/* Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4CAF50;
+  padding: 15px;
+}
+
 nav a {
   color:black;
-  margin-left: 25px;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  padding: 10px;
+  font-size: 16px;
 }
 
 nav a:hover {
-  color: green;
+  background-color:white;
+  border-radius: 5px;
 }
+
+/* Mobile View - Burger Menu */
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+  }
+
+  nav a:not(.navbar-toggle) {
+    display: none;
+  }
+
+  nav.open a {
+    display: block;
+  }
+}
+
     .product-img {
       max-height: 300px;
       width: 100%;
@@ -127,6 +172,75 @@ nav a:hover {
       color: #333;
     }
 
+    footer.custom-footer {
+    background-color: #4CAF50;
+    color: black;
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1 1 30%;
+    padding: 10px;
+  }
+
+  .footer-section h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  /* Social Media Icons */
+  .footer-social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .footer-social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+  }
+
+  .footer-social-icons a:hover {
+    color: #388e3c;
+  }
+
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-section {
+      flex: 1 1 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-social-icons {
+      justify-content: center;
+      width: 100%;
+    }
+  }
     @keyframes popupFadeIn {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
@@ -148,14 +262,14 @@ nav a:hover {
     <img src="logo.jpeg" alt="Logo">
     <span class="brand-name">PAAVAI MUSHROOM FARM</span>
   </div>
-  <nav>
+  <nav id="navbar">
+    <div class="navbar-toggle" id="navbar-toggle">&#9776;</div>
     <a href="index.html">Home</a>
     <a href="product.html">Products</a>
     <a href="about.html">About Us</a>
-  
   </nav>
   <div id="google_translate_element"></div>
-  </header>
+</header>
 
 <!-- Product Section -->
 <div class="container my-5">
@@ -318,31 +432,40 @@ nav a:hover {
 </div>
 
 <!-- Footer -->
-<footer style="background-color: rgba(76, 175, 80, 0.6); color: black; font-weight: bold; padding-top: 20px; text-align: center;">
 
-  <div class="container">
-    <div class="row justify-content-center text-start text-md-center">
-      <div class="col-md-4 mb-3">
-        <h5>Contact Us</h5>
-        <p>
-          📍1007, North Street, O.koothur(po)<br>
-          Ariyalur District, 621705<br>
-          <strong>Phone:</strong> <a href="tel:+91 9360262443">+91 9360262443</a><br>
-          <strong>Email:</strong> <a href="mailto:arulkaruppu8@gmail.com">arulkaruppu8@gmail.com</a>
-        </p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <h5>More Info</h5>
-        <ul class="list-unstyled">
-          <li><a href="about.html">About Us</a></li>
-          
-        </ul>
-      </div>
+<footer class="custom-footer">
+  <div class="footer-container">
+    <!-- Contact Us Section -->
+    <div class="footer-section contact-us">
+      
+      <h5 style="font-size: 28px;"> 📞 Contact Us</h5>
+      <p><i class="fas fa-map-marker-alt"></i> 1007, North Street, O.koothur(po)</p>
+      <p>Ariyalur District, 621705</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+919360262443">+91 9360262443</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:arulkaruppu8@gmail.com">arulkaruppu8@gmail.com</a></p>
     </div>
-    <hr class="bg-dark">
-    <div class="text-center small pb-2">
-      &copy; 2025 Paavai Mushroom Farms. All rights reserved.
+
+    <!-- Quick Links Section -->
+    <div class="footer-section quick-links">
+      <h5 style="font-size:28px">🔗 Quick Links  </h5>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="product.html"><i class="fas fa-box-open"></i> Products</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+      </ul>
     </div>
+
+    <!-- Follow Us Section -->
+    <div class="footer-section follow-us">
+      <h5 style="font-size: 28px;">📲 Follow Us</h5> <!-- Enlarged text -->
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919360262443" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <p>&copy; 2025 <strong>Paavai Mushroom Farm</strong>. All rights reserved.</p>
   </div>
 </footer>
 
@@ -382,20 +505,66 @@ nav a:hover {
   });
 
 </script>
+<!-- Cookie handling & language apply FIRST -->
+<script>
+  // Set default language based on cookie (before Google loads)
+  (function() {
+    var lang = (document.cookie.match(/(^|;\s*)googtrans=\/en\/(\w+)/) || [])[2];
+    if (lang) {
+      var newCookie = "/en/" + lang;
+      document.cookie = "googtrans=" + newCookie + ";path=/";
+      document.cookie = "googtrans=" + newCookie + ";path=/;domain=" + location.hostname;
+    }
+  })();
+</script>
+<div id="google_translate_element"></div>
+
 <script type="text/javascript">
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
       includedLanguages: 'en,ta',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
     }, 'google_translate_element');
   }
-
-  window.onload = function () {
-    googleTranslateElementInit();
-  };
 </script>
+
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  // Save user-selected language to cookie
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new MutationObserver(() => {
+      const iframe = document.querySelector('iframe.goog-te-menu-frame');
+      if (iframe) {
+        try {
+          const items = iframe.contentDocument.querySelectorAll('.goog-te-menu2-item span.text');
+          items.forEach(span => {
+            span.addEventListener('click', function() {
+              const lang = span.innerText.toLowerCase().includes("tamil") ? 'ta' : 'en';
+              const val = '/en/' + lang;
+              document.cookie = 'googtrans=' + val + ';path=/';
+              document.cookie = 'googtrans=' + val + ';path=/;domain=' + location.hostname;
+            });
+          });
+        } catch (err) {
+          console.warn("Translate frame error", err);
+        }
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>
+<script>
+  const navbarToggle = document.getElementById("navbar-toggle");
+  const navbar = document.getElementById("navbar");
+
+  navbarToggle.addEventListener("click", () => {
+    navbar.classList.toggle("open");
+  });
+</script>
+
 
 </body>
 </html>
